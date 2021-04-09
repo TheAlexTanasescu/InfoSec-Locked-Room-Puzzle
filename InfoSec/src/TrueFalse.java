@@ -20,7 +20,7 @@ public class TrueFalse
     int points, time;
     String topic;
     
-	public TrueFalse(JFrame window)
+	public TrueFalse(JFrame window, Question question)
     {
 
         mainTextPanel = new JPanel();
@@ -28,7 +28,7 @@ public class TrueFalse
         mainTextPanel.setBackground(Color.BLACK);
         window.add(mainTextPanel);
 
-        mainTextArea = new JTextArea("This is where the question goes");
+        mainTextArea = new JTextArea(question.getAsk());
         mainTextArea.setBounds(100, 100, 600,250);
         mainTextArea.setBackground(Color.BLACK);
         mainTextArea.setForeground(Color.GREEN);
@@ -41,13 +41,13 @@ public class TrueFalse
         choicePanel.setBackground(Color.BLACK);
         window.add(choicePanel);
 
-        firstChoice = new JButton("True");
+        firstChoice = new JButton(question.getChoices()[0]);
         firstChoice.setBackground(Color.BLACK);
         firstChoice.setForeground(Color.GREEN);
         firstChoice.setFont(subtitleFont);
         choicePanel.add(firstChoice);
 
-        secondChoice = new JButton("False");
+        secondChoice = new JButton(question.getChoices()[1]);
         secondChoice.setBackground(Color.BLACK);
         secondChoice.setForeground(Color.GREEN);
         secondChoice.setFont(subtitleFont);

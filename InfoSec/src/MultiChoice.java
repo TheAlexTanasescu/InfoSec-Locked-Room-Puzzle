@@ -20,7 +20,7 @@ public class MultiChoice
     int points, time;
     String topic;
     
-	public MultiChoice(JFrame window)
+	public MultiChoice(JFrame window, Question question)
     {
 
         mainTextPanel = new JPanel();
@@ -28,7 +28,7 @@ public class MultiChoice
         mainTextPanel.setBackground(Color.BLACK);
         window.add(mainTextPanel);
 
-        mainTextArea = new JTextArea("This is where the question goes");
+        mainTextArea = new JTextArea(question.getAsk());
         mainTextArea.setBounds(100, 100, 600,250);
         mainTextArea.setBackground(Color.BLACK);
         mainTextArea.setForeground(Color.GREEN);
@@ -37,29 +37,29 @@ public class MultiChoice
         mainTextPanel.add(mainTextArea);
 
         choicePanel = new JPanel();
-        choicePanel.setBounds(250, 350, 300, 150);
+        choicePanel.setBounds(0, 350, 800, 250);
         choicePanel.setBackground(Color.BLACK);
         window.add(choicePanel);
 
-        firstChoice = new JButton("Choice 1");
+        firstChoice = new JButton(question.getChoices()[0]);
         firstChoice.setBackground(Color.BLACK);
         firstChoice.setForeground(Color.GREEN);
         firstChoice.setFont(subtitleFont);
         choicePanel.add(firstChoice);
 
-        secondChoice = new JButton("Choice 2");
+        secondChoice = new JButton(question.getChoices()[1]);
         secondChoice.setBackground(Color.BLACK);
         secondChoice.setForeground(Color.GREEN);
         secondChoice.setFont(subtitleFont);
         choicePanel.add(secondChoice);
 
-        thirdChoice = new JButton("Choice 3");
+        thirdChoice = new JButton(question.getChoices()[2]);
         thirdChoice.setBackground(Color.BLACK);
         thirdChoice.setForeground(Color.GREEN);
         thirdChoice.setFont(subtitleFont);
         choicePanel.add(thirdChoice);
 
-        fourthChoice = new JButton("Choice 4");
+        fourthChoice = new JButton(question.getChoices()[3]);
         fourthChoice.setBackground(Color.BLACK);
         fourthChoice.setForeground(Color.GREEN);
         fourthChoice.setFont(subtitleFont);
@@ -116,5 +116,7 @@ public class MultiChoice
         topicValueLabel.setText(topic);
     
     }
+    
+    
 
 }

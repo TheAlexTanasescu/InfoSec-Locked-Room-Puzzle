@@ -1,0 +1,192 @@
+420
+What is generally the weakest link in computer security?
+The encryption method
+The password requirements
+The user
+The storage of passwords
+
+410
+Which of the following is not in the 10 principles of PIPEDA?
+Gain informed consent
+Keep records of what information you collected
+Provide recourse in the case of any mistakes
+Obtain up-to-date information
+
+200
+Are security and privacy opposing forces?
+Yes
+No
+
+400
+What is the purpose of SSH?
+It is a network protocol which allows for secure network access and connection over an unsecure/unknown network.
+There is no purpose.
+Allows for connection over a network.
+None of the above
+
+410
+What does SSH stand for?
+Secure Selected Host
+Secure Shell
+Standard Security Hold
+Secure Separate Hashing
+
+430
+What is a private key in terms of key based authentication?
+It is a key which is known only to the user who created it
+messages encrypted with the owner’s public key can only be decrypted with their private key.
+It is the same as public key.
+A&B
+
+430 
+What is a public key in terms of key based authentication?
+It is the other key created in the pair in a private and public keypair.
+can be given out to others.
+to which the people with the owner’s public key can encrypt any message and send it to the owner
+All the above
+
+420
+What is the major advantage of using key based authentication?
+More secure than passwords
+The attacker has to obtain both private and public keys in order to decrypt messages.
+A&B
+None of the above
+ 
+410 
+What is the major disadvantage of using key based authentication?
+There is no disadvantage.
+The security is no better than password-based authentication if the attacker gets both private and public keys.
+The public key exposes the private key.
+All the above
+
+400 
+What is the most common access policy?
+Discretionary Access Control
+Role based Access Control.
+Mandatory Access Control
+Necessary Access Control
+ 
+430 
+What is a super user?
+Identified as UID 0 on *nix systems.
+Has the ability to read/write any file or system resource.
+can modify the operating system.
+All the Above
+ 
+200 
+Most local vulnerabilities in Unix systems occur in setuid-root programs.
+True
+False
+
+200 
+chown is the command in Unix that allows for file ownership to be changed.
+True
+False
+
+210 
+The sudo command in Unix allows for permissions of a file to be changed.
+True
+False
+
+420
+What is an Antivirus?
+A bigger and more dangerous virus.
+Software to duplicate viruses.
+Computer software used to prevent, detect and remove malicious software
+None of the above
+
+430
+Example of computer antivirus program include      
+Norton
+McAfee
+Avast
+All of these
+
+200
+Does Windows 10 come with an in-built antivirus?     
+Yes
+No
+
+410
+Full form of malware is: 
+Malicious Hardware
+Malicious Software
+Malicious Ransomware
+Malicious Shovelware
+
+410
+If you fall victim to a phishing scam, what should you do?      
+Just unplug the computer.
+Change any compromised passwords and inform the authorities
+Delete the phishing email.    
+There is nothing you can do at that point.
+
+431 
+How do the criminals start the ransomware attacks?
+Sending a scam email with links or attachments that put your data and network at risk.
+Getting into your server through the vulnerabilities and installing the malware.
+Using infected websites to download malicious software to your device.
+All of these
+
+411
+What is Email Spoofing?
+Sending Inappropriate emails.
+Sending emails using a forged email address.
+Fact checking emails.
+Having separate aliases for the same inbox.
+
+421
+Another name of computer anti virus is:     
+Redeemer
+DES
+Vaccine
+Tunneler
+
+431
+Ransomware payments are often demanded in the form of:
+Credit cards. 
+Cheques.
+Bank Account Number
+Bitcoin
+
+421
+What of the following are programs that copy themselves throughout a computer?
+Worms
+Trojans
+Viruses
+Keyloggers
+
+412
+Which was the first Computer Virus?
+Creeper
+Trojan horse
+ILOVEYOU
+Dancing Pigs
+
+422
+Which method of hacking will record all your keystrokes?
+Keyhijacking
+Keyjacking
+Keylogging
+Keyboard monitoring
+
+402
+Which of these is not an example of physical leakage?    
+Phishing
+Dumpster Driving
+Printers and Photocopiers
+Social Engineering
+
+412
+Which of these is a code injecting method used for attacking the database of a system?    
+XML Injection
+SQL Injection
+Malicious Code Injection
+UML Injection
+
+402
+Which is Code Red?
+Virus   
+Antivirus  
+Multimedia Software
+A Mountain Doo Flavour

@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.*;
+import java.io.IOException;
 import java.awt.GridLayout;
 
 
@@ -18,15 +19,12 @@ public class Game
     String topic;
 
     TitleScreenHandler tsHandler = new TitleScreenHandler();
-    
-    public static void main(String[] args) 
-    {
-        new Game();
+    QuestionReader qList;
 
-    }
-
-    public Game()
+    public Game() throws IOException
     {
+    	qList = new QuestionReader();
+    	
         window = new JFrame();
         window.setSize(800, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,7 +68,7 @@ public class Game
 
     }
 
-    public void createGameScreen()
+   /* public void createGameScreen()
     {
         titleScreen.setVisible(false);
         startPanel.setVisible(false); 
@@ -167,7 +165,7 @@ public class Game
         topicValueLabel.setText(topic);
     
     }
-
+*/
     public class TitleScreenHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -175,7 +173,16 @@ public class Game
             titleScreen.setVisible(false);
             startPanel.setVisible(false); 
             //new MultiChoice(window);
-            new TrueFalse(window);
+            int index = (int) (Math.random()*qList.getEasy().size());
+            switch(qList.getEasy().get(index).getType())
+            {
+            case 2:
+            	new TrueFalse(window,qList.getEasy().get(index));
+            	break;
+            case 4:
+            	new MultiChoice(window,qList.getEasy().get(index));
+            	break;
+            }
         }
     }
 }
