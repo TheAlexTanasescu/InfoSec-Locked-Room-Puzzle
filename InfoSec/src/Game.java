@@ -177,10 +177,20 @@ public class Game
             switch(qList.getEasy().get(index).getType())
             {
             case 2:
-            	new TrueFalse(window,qList.getEasy().get(index));
+            	try {
+					new TrueFalse(window,qList.getEasy().get(index),qList);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
             	break;
             case 4:
-            	new MultiChoice(window,qList.getEasy().get(index));
+            	try {
+					new MultiChoice(window,qList.getEasy().get(index),qList);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
             	break;
             }
         }

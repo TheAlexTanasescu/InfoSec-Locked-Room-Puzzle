@@ -1,6 +1,9 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,7 +13,7 @@ import javax.swing.JTextArea;
 
 public class TrueFalse
 {
-	
+	JFrame window;
     JPanel mainTextPanel, choicePanel, statusPanel;
     JLabel pointsLabel, timeLabel, topicLabel, pointValueLabel, timeValueLabel, topicValueLabel;
     Font titleFont = new Font("Futura", Font.PLAIN, 28), subtitleFont = new Font("Futura", Font.PLAIN, 21);
@@ -20,8 +23,13 @@ public class TrueFalse
     int points, time;
     String topic;
     
-	public TrueFalse(JFrame window, Question question)
+    QuestionReader qList;
+    QuestionScreenHandler qHandler = new QuestionScreenHandler();
+    
+	public TrueFalse(JFrame window, Question question,QuestionReader list) throws IOException
     {
+		qList = list;
+		this.window = window;
 
         mainTextPanel = new JPanel();
         mainTextPanel.setBounds(100, 100, 600,250);
@@ -45,14 +53,15 @@ public class TrueFalse
         firstChoice.setBackground(Color.BLACK);
         firstChoice.setForeground(Color.GREEN);
         firstChoice.setFont(subtitleFont);
+        firstChoice.addActionListener(qHandler);
         choicePanel.add(firstChoice);
-
+       
         secondChoice = new JButton(question.getChoices()[1]);
         secondChoice.setBackground(Color.BLACK);
         secondChoice.setForeground(Color.GREEN);
         secondChoice.setFont(subtitleFont);
+        secondChoice.addActionListener(qHandler);
         choicePanel.add(secondChoice);
-
 
         statusPanel = new JPanel();
         statusPanel.setBounds(100, 15, 600, 50);
@@ -104,6 +113,38 @@ public class TrueFalse
         timeValueLabel.setText(Integer.toString(time));
         topicValueLabel.setText(topic);
     
+    }
+    
+    public class QuestionScreenHandler implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+        	mainTextPanel.setVisible(false);
+            mainTextArea.setVisible(false); 
+            choicePanel.setVisible(false);
+            statusPanel.setVisible(false);
+            //new MultiChoice(window);
+            int index = (int) (Math.random()*qList.getEasy().size());
+            switch(qList.getEasy().get(index).getType())
+            {
+            case 2:
+            	try {
+					new TrueFalse(window,qList.getEasy().get(index),qList);
+				} catch (IOException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+            	break;
+            case 4:
+            	try {
+					new MultiChoice(window,qList.getEasy().get(index),qList);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            	break;
+            }
+        }
     }
 
 }
