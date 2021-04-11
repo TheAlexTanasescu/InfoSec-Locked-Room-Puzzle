@@ -2,12 +2,13 @@
 public class Player 
 {
 	private String name;
-	private int score;
+	private int score, lives;
 	
 	public Player(String name, int score)
 	{
 		this.name = name;
 		this.score = score;
+		lives = 3;
 	}
 	
 	public int getScore()
@@ -23,6 +24,15 @@ public class Player
 	public void addScore(int toAdd)
 	{
 		score += toAdd;
+	}
+
+	public int getLives() {
+		return lives;
+	}
+
+	public void reduceLives()
+	{
+		lives -= 1;
 	}
 
 }

@@ -38,5 +38,14 @@ public class Question
 	public String getAsk() {
 		return ask;
 	}
+	
+	public boolean isCorrect(String toCompare)
+	{
+		if(toCompare.equalsIgnoreCase(correct))
+		{
+			return true;
+		}
+		return false;
+	}
 
 }

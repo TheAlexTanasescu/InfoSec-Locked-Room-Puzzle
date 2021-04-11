@@ -20,10 +20,12 @@ public class Game
 
     TitleScreenHandler tsHandler = new TitleScreenHandler();
     QuestionReader qList;
+    Player player;
 
-    public Game() throws IOException
+    public Game(QuestionReader qList,Player player) throws IOException
     {
-    	qList = new QuestionReader();
+    	this.qList = qList;
+    	this.player = player;
     	
         window = new JFrame();
         window.setSize(800, 600);
@@ -178,7 +180,7 @@ public class Game
             {
             case 2:
             	try {
-					new TrueFalse(window,qList.getEasy().get(index),qList);
+					new TrueFalse(window,qList.getEasy().get(index),player);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -186,7 +188,7 @@ public class Game
             	break;
             case 4:
             	try {
-					new MultiChoice(window,qList.getEasy().get(index),qList);
+					new MultiChoice(window,qList.getEasy().get(index),player);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
