@@ -10,11 +10,11 @@ public class QuestionReader
 	public QuestionReader() throws IOException
 	{
 		//Create filereader and ArrayLists (create 3 for easy,med,hard)
-		BufferedReader in = null;
-		try
+		
+		try(BufferedReader in = new BufferedReader(new FileReader("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/input.txt")))
 		{
 			//Set reader to the input file to be read, create variables that hold most recently read item
-			in = new BufferedReader(new FileReader("input.txt"));
+			
 			char c;
 			String line = "";
 			
@@ -88,11 +88,12 @@ public class QuestionReader
 			System.out.println(hard.get(index).getAsk());
 			System.out.println(hard.get(index).getCorrect());
 			*/
-		} 
-		finally //Close file as a common courtesy :) 
-		{
 			in.close();
-		}
+		} 
+		/* finally //Close file as a common courtesy :) 
+		{
+			
+		} */
 	}
 	
 	public ArrayList<Question> getEasy()

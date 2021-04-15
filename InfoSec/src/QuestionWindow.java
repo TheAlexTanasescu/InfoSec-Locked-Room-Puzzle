@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -54,7 +55,7 @@ public class QuestionWindow
 
         statusPanel = new JPanel();
         statusPanel.setBounds(100, 15, 600, 50);
-        statusPanel.setBackground(Color.BLACK);
+        statusPanel.setBackground(Color.BLUE);
         statusPanel.setLayout(new GridLayout(1,4));
         window.add(statusPanel);     
 
@@ -69,6 +70,7 @@ public class QuestionWindow
         statusPanel.add(pointValueLabel);
 
         timeLabel = new JLabel("Time:");
+        //timeLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/timer.png"));
         timeLabel.setFont(subtitleFont);
         timeLabel.setForeground(Color.GREEN);
         statusPanel.add(timeLabel);
@@ -78,7 +80,8 @@ public class QuestionWindow
         timeValueLabel.setForeground(Color.GREEN);
         statusPanel.add(timeValueLabel);
 
-        topicLabel = new JLabel("Topic:");
+        topicLabel = new JLabel("Topic");
+        topicLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/topic2.png"));
         topicLabel.setFont(subtitleFont);
         topicLabel.setForeground(Color.GREEN);
         statusPanel.add(topicLabel);
