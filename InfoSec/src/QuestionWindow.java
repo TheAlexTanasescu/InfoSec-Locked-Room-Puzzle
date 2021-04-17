@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.Timer;
 
 //Master class that creates all features that are common amongst question classes
 public class QuestionWindow
@@ -26,6 +27,7 @@ public class QuestionWindow
     String topic;
     Question question;
     Player player;
+    Timer timer;
     
     QuestionScreenHandler qHandler = new QuestionScreenHandler();
     
@@ -83,7 +85,7 @@ public class QuestionWindow
 
         topicLabel = new JLabel();
 
-        topicLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/topic.png"));
+        topicLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/heart.png"));
         topicLabel.setFont(subtitleFont);
 
        // topicLabel.setIcon(new ImageIcon("topic2.png"));
@@ -105,10 +107,12 @@ public class QuestionWindow
     {
         points = player.getScore();
         time = 60;
-        topic = "Security and Privacy";
+        topic = Integer.toString(player.getLives());
         pointValueLabel.setText(Integer.toString(points)); 
-        timeValueLabel.setText(Integer.toString(time));
+        //timeValueLabel.setText(Integer.toString(time));
         topicValueLabel.setText(topic);
+        countdownTimer();
+        timer.start();
     
     }
     
@@ -136,5 +140,22 @@ public class QuestionWindow
 
             }
         }
+    
+    public void countdownTimer()
+    {
+    	timer = new Timer(1000, new ActionListener()
+    		{
+    			public void actionPerformed(ActionEvent e)
+    			{
+    				time--;
+    				timeLabel.setText(Integer.toString(time));
+    				if(time == 0)
+    				{
+    					timer.stop();
+    					new GameOver(window);
+    				}
+    			}
+    		});
+    }
     }
 
