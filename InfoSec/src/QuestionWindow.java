@@ -106,7 +106,7 @@ public class QuestionWindow
     public void playerSetup()
     {
         points = player.getScore();
-        time = 60;
+        time = 10;
         topic = Integer.toString(player.getLives());
         pointValueLabel.setText(Integer.toString(points)); 
         //timeValueLabel.setText(Integer.toString(time));
@@ -149,9 +149,12 @@ public class QuestionWindow
     			{
     				time--;
     				timeLabel.setText(Integer.toString(time));
-    				if(time == 0)
+    				if(time == -1)
     				{
     					timer.stop();
+    					window.remove(choicePanel);
+    					window.remove(statusPanel);
+    					window.remove(mainTextPanel);
     					new GameOver(window);
     				}
     			}
