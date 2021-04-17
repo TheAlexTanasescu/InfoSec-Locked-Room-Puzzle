@@ -55,11 +55,12 @@ public class QuestionWindow
 
         statusPanel = new JPanel();
         statusPanel.setBounds(100, 15, 600, 50);
-        statusPanel.setBackground(Color.BLUE);
+        statusPanel.setBackground(Color.BLACK);
         statusPanel.setLayout(new GridLayout(1,4));
         window.add(statusPanel);     
 
-        pointsLabel = new JLabel("Points:");
+        pointsLabel = new JLabel();
+        pointsLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/score2.png"));
         pointsLabel.setFont(subtitleFont);
         pointsLabel.setForeground(Color.GREEN);
         statusPanel.add(pointsLabel);
@@ -69,8 +70,8 @@ public class QuestionWindow
         pointValueLabel.setForeground(Color.GREEN);
         statusPanel.add(pointValueLabel);
 
-        timeLabel = new JLabel("Time:");
-        //timeLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/timer.png"));
+        timeLabel = new JLabel();
+        timeLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/timer2.png"));
         timeLabel.setFont(subtitleFont);
         timeLabel.setForeground(Color.GREEN);
         statusPanel.add(timeLabel);
@@ -80,8 +81,8 @@ public class QuestionWindow
         timeValueLabel.setForeground(Color.GREEN);
         statusPanel.add(timeValueLabel);
 
-        topicLabel = new JLabel("Topic");
-        topicLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/topic2.png"));
+        topicLabel = new JLabel();
+        topicLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/topic.png"));
         topicLabel.setFont(subtitleFont);
         topicLabel.setForeground(Color.GREEN);
         statusPanel.add(topicLabel);
