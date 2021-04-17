@@ -34,5 +34,10 @@ public class Player
 	{
 		lives -= 1;
 	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
 
 }

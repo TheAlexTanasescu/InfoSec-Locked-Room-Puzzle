@@ -23,7 +23,7 @@ public class MultiChoice extends QuestionWindow //Class responsible for four cho
         firstChoice = new JButton(question.getChoices()[0]);
         firstChoice.setBackground(Color.BLACK);
         firstChoice.setForeground(Color.GREEN);
-        firstChoice.setFont(subtitleFont);
+        firstChoice.setFont(subtitleFont); 
         firstChoice.addActionListener(qHandler);
         choicePanel.add(firstChoice);
         

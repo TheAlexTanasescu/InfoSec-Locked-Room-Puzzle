@@ -21,7 +21,7 @@ public class TrueFalse extends QuestionWindow //Class responsible for two choice
 
         firstChoice = new JButton(question.getChoices()[0]);
         firstChoice.setBackground(Color.BLACK);
-        firstChoice.setForeground(Color.GREEN);
+        firstChoice.setForeground(Color.GREEN); 
         firstChoice.setFont(subtitleFont);
         firstChoice.addActionListener(qHandler);
         choicePanel.add(firstChoice);

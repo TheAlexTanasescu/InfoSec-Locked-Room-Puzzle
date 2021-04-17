@@ -77,27 +77,8 @@ public class Game
         {
             titleScreen.setVisible(false);
             startPanel.setVisible(false); 
-            //new MultiChoice(window);
-            int index = (int) (Math.random()*qList.getEasy().size());
-            switch(qList.getEasy().get(index).getType())
-            {
-            case 2:
-            	try {
-					new TrueFalse(window,qList.getEasy().get(index),player);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-            	break;
-            case 4:
-            	try {
-					new MultiChoice(window,qList.getEasy().get(index),player);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-            	break;
+            new EnterName(window,player);
             }
         }
     }
-}
+
