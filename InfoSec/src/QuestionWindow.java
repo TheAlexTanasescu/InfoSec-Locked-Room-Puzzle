@@ -80,10 +80,11 @@ public class QuestionWindow
         timeValueLabel.setForeground(Color.GREEN);
         statusPanel.add(timeValueLabel);
 
-        topicLabel = new JLabel("Topic");
-        topicLabel.setIcon(new ImageIcon("/Users/alextanasescu/Desktop/Coding/CPSC 329/InfoSec-Locked-Room-Puzzle/InfoSec/src/topic2.png"));
-        topicLabel.setFont(subtitleFont);
+        topicLabel = new JLabel();
+        topicLabel.setIcon(new ImageIcon("topic2.png"));
+        topicLabel.setFont(subtitleFont); 
         topicLabel.setForeground(Color.GREEN);
+        topicLabel.setBackground(Color.WHITE);
         statusPanel.add(topicLabel);
 
         topicValueLabel = new JLabel();
@@ -124,7 +125,7 @@ public class QuestionWindow
             	player.reduceLives();
             }
             
-            Main.nextQuestion(window);
+            Main.nextScreen(window);
             //new MultiChoice(window);
 
             }
